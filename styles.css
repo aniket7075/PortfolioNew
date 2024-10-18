@@ -123,6 +123,7 @@ h2 {
 /* Experience */
 .timeline-item {
     margin-bottom: 30px;
+    padding: 2%;
 }
 
 .timeline-item h3 {
