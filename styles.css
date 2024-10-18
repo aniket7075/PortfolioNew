@@ -22,7 +22,7 @@ nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: rgb(12, 12, 12);
 }
 
 nav h1 {
@@ -39,14 +39,14 @@ nav h1 {
 }
 
 .nav-links a {
-    color: white;
+    color: rgb(27, 21, 21);
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #f4d03f;
+    color: #0bdbb4;
 }
 
 /* Header */
@@ -54,7 +54,7 @@ header {
     background: linear-gradient(135deg, #1c92d2, #f2fcfe);
     text-align: center;
     padding: 50px 20px;
-    color: white;
+    color: rgb(8, 8, 8);
 }
 
 header h2 {
@@ -82,7 +82,7 @@ header a:hover {
     max-width: 1200px;
     margin: 50px auto;
     padding: 20px;
-    background-color: rgb(97, 94, 94);
+    background-color: rgba(252, 252, 252, 0.874);
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
