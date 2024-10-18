@@ -8,10 +8,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <nav>
         <div class="container">
             <h1>Aniket Husukale</h1>
-            <p>Email: <a href="mailto:husukaleaniket@gmail.com">husukaleaniket@gmail.com</a> | Phone: +91-7998637575 | <a href="#">LinkedIn</a></p>
+            <ul class="nav-links">
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h2>MCA Graduate | Full-Stack Developer</h2>
+            <p>Email: <a href="mailto:husukaleaniket@gmail.com">husukaleaniket@gmail.com</a> | Phone: +91-7998637575</p>
+            <a href="#" class="cta-button">Download CV</a>
         </div>
     </header>
 
@@ -22,64 +37,86 @@
 
     <section id="skills" class="container">
         <h2>Skills</h2>
-        <ul>
-            <li>Programming Languages: Core Java, PHP</li>
-            <li>Web Development: HTML, CSS, JavaScript, React</li>
-            <li>Database Management: MySQL, JDBC</li>
-            <li>Tools and Software: Eclipse, Visual Studio, NetBeans</li>
-            <li>Operating Systems: Windows, Linux</li>
-        </ul>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Programming Languages</h3>
+                <p>Core Java, PHP</p>
+            </div>
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>HTML, CSS, JavaScript, React</p>
+            </div>
+            <div class="skill-card">
+                <h3>Database Management</h3>
+                <p>MySQL, JDBC</p>
+            </div>
+            <div class="skill-card">
+                <h3>Tools & Software</h3>
+                <p>Eclipse, Visual Studio, NetBeans</p>
+            </div>
+            <div class="skill-card">
+                <h3>Operating Systems</h3>
+                <p>Windows, Linux</p>
+            </div>
+        </div>
     </section>
 
     <section id="experience" class="container">
         <h2>Experience</h2>
-        <h3>Codenera Pvt Ltd, Pune – Software Development Intern (Feb 2024 – July 2024)</h3>
-        <ul>
-            <li>Acquired proficiency in Core Java, HTML, CSS, SQL, and JDBC.</li>
-            <li>Participated in collaborative software development projects.</li>
-            <li>Received training in Java, Spring, and Hibernate frameworks.</li>
-            <li>Successfully completed a 6-month Java training program.</li>
-        </ul>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Codenera Pvt Ltd, Pune</h3>
+                <span>Software Development Intern (Feb 2024 – July 2024)</span>
+                <ul>
+                    <li>Acquired proficiency in Core Java, HTML, CSS, SQL, and JDBC.</li>
+                    <li>Participated in collaborative software development projects.</li>
+                    <li>Received training in Java, Spring, and Hibernate frameworks.</li>
+                    <li>Successfully completed a 6-month Java training program.</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section id="projects" class="container">
         <h2>Projects</h2>
 
-        <h3>Agriculture Web Portal</h3>
-        <ul>
-            <li>Developed a web-based portal for farmers to sell products like seeds and materials directly.</li>
-            <li>Utilized Java, HTML5, CSS3, and MySQL for backend and frontend development.</li>
-            <li>Created a feature for farmers to list products with descriptions and pricing.</li>
-            <li>Implemented secure user registration and login functionalities.</li>
-        </ul>
+        <div class="project-card">
+            <h3>Agriculture Web Portal</h3>
+            <ul>
+                <li>Developed a web-based portal for farmers to sell products like seeds and materials directly.</li>
+                <li>Utilized Java, HTML5, CSS3, and MySQL for backend and frontend development.</li>
+                <li>Created a feature for farmers to list products with descriptions and pricing.</li>
+                <li>Implemented secure user registration and login functionalities.</li>
+            </ul>
+        </div>
 
-        <h3>E-learning Platform</h3>
-        <ul>
-            <li>Created a web-based platform for students to access notes and purchase courses.</li>
-            <li>Used Java, HTML5, and CSS3 for the interface.</li>
-            <li>Developed features for instructors to create, manage, and update courses.</li>
-            <li>Integrated discussion forums for students to collaborate.</li>
-        </ul>
+        <div class="project-card">
+            <h3>E-learning Platform</h3>
+            <ul>
+                <li>Created a web-based platform for students to access notes and purchase courses.</li>
+                <li>Used Java, HTML5, and CSS3 for the interface.</li>
+                <li>Developed features for instructors to create, manage, and update courses.</li>
+                <li>Integrated discussion forums for students to collaborate.</li>
+            </ul>
+        </div>
     </section>
 
     <section id="education" class="container">
         <h2>Education</h2>
-        <p><strong>MCA</strong> – Savitribai Phule Pune University (2024)</p>
-        <p><strong>BCA</strong> – Chhatrapati Shivaji Maharaj University, Kolhapur (2022)</p>
-    </section>
-
-    <section id="certifications" class="container">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Java Full-Stack – Codenera Pvt. Ltd (2024)</li>
-            <li>CSS – HackerRank (2024)</li>
-            <li>Python Programming & Cyber Security – IANT Institute (2021)</li>
-        </ul>
+        <div class="education-card">
+            <h3>MCA</h3>
+            <p>Savitribai Phule Pune University (2024)</p>
+        </div>
+        <div class="education-card">
+            <h3>BCA</h3>
+            <p>Chhatrapati Shivaji Maharaj University, Kolhapur (2022)</p>
+        </div>
     </section>
 
     <section id="contact" class="container">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:husukaleaniket@gmail.com">husukaleaniket@gmail.com</a> | Phone: +91-7998637575</p>
+        <p>Email: <a href="mailto:husukaleaniket@gmail.com">husukaleaniket@gmail.com</a></p>
+        <p>Phone: +91-7998637575</p>
         <p>LinkedIn: <a href="#">Aniket Husukale</a></p>
     </section>
 
