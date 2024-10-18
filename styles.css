@@ -14,7 +14,7 @@ body {
 
 /* Navigation */
 nav {
-    background-color: #333;
+    background-color: #636262;
     padding: 10px 0;
 }
 
@@ -22,12 +22,14 @@ nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: rgb(12, 12, 12);
+    color: rgb(18, 17, 17);
+    padding-left: 5%;
 }
 
 nav h1 {
     font-size: 1.8rem;
 }
+
 
 .nav-links {
     list-style: none;
@@ -39,7 +41,7 @@ nav h1 {
 }
 
 .nav-links a {
-    color: rgb(27, 21, 21);
+    color: rgb(60, 39, 39);
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
