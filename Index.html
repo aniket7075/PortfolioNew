@@ -160,7 +160,7 @@
                 message: message,
             };
 
-            emailjs.send('Gmail',' aniket7075', templateParams) // Replace with your service and template IDs
+            emailjs.send(Gmail,aniket7075, templateParams) // Replace with your service and template IDs
                 .then(function(response) {
                     document.getElementById('formResponse').innerHTML = '<div class="alert alert-success">Message sent successfully!</div>';
                     document.getElementById('contactForm').reset(); // Clear the form
