@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aniket Husukale | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
     <nav>
         <div class="container">
-            <h1>Aniket Husukale</h1>
+            <h1 class="logo">Aniket Husukale</h1>
             <ul class="nav-links">
                 <li><a href="#summary">Summary</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -24,20 +25,20 @@
     </nav>
 
     <header>
-        <div class="container">
-            <h2>MCA Graduate | Full-Stack Developer</h2>
-            <p>Email: <a href="mailto:husukaleaniket@gmail.com">husukaleaniket@gmail.com</a> | Phone: +91-7998637575</p>
-            <a href="/Aniket.S.Husukale.pdf" class="cta-button">Download CV</a>
+        <div class="container header-content">
+            <h2 class="animate-fade-in">MCA Graduate | Full-Stack Developer</h2>
+            <p class="animate-slide-up">Email: <a href="mailto:husukaleaniket@gmail.com">husukaleaniket@gmail.com</a> | Phone: +91-7998637575</p>
+            <a href="/Aniket.S.Husukale.pdf" class="cta-button animate-slide-up">Download CV</a>
         </div>
     </header>
 
     <section id="summary" class="container">
-        <h2>Summary</h2>
+        <h2 class="section-title">Summary</h2>
         <p>Motivated and detail-oriented MCA graduate with strong programming skills and a passion for software development.</p>
     </section>
 
     <section id="skills" class="container">
-        <h2>Skills</h2>
+        <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">Core Java, PHP</div>
             <div class="skill-card">HTML, CSS, JavaScript, React</div>
@@ -48,7 +49,7 @@
     </section>
 
     <section id="experience" class="container">
-        <h2>Experience</h2>
+        <h2 class="section-title">Experience</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <h3>Codenera Pvt Ltd, Pune</h3>
@@ -63,7 +64,7 @@
     </section>
 
     <section id="projects" class="container">
-        <h2>Projects</h2>
+        <h2 class="section-title">Projects</h2>
         <div class="project-card">
             <h3>Agriculture Web Portal</h3>
             <p>Developed a web-based portal for farmers to sell products directly.</p>
@@ -75,7 +76,7 @@
     </section>
 
     <section id="education" class="container">
-        <h2>Education</h2>
+        <h2 class="section-title">Education</h2>
         <div class="education-card">
             <h3>MCA</h3>
             <p>Savitribai Phule Pune University (2024)</p>
@@ -83,7 +84,7 @@
     </section>
 
     <section id="contact" class="container">
-        <h2>Contact</h2>
+        <h2 class="section-title">Contact</h2>
         <form id="contact-form" onsubmit="sendEmail(event)">
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -95,8 +96,7 @@
             </div>
             <div class="form-group">
                 <label for="message">Message:</label>
-                <textarea id="message"
-                required></textarea>
+                <textarea id="message" required></textarea>
             </div>
             <button type="submit" class="btn">Send Message</button>
         </form>
