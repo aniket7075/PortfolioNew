@@ -1,87 +1,161 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
 }
 
 .container {
-    background-color: #ffffff;
+    max-width: 1200px;
+    margin: auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    animation: slideIn 0.5s ease forwards;
-    opacity: 0; /* Start hidden for animation */
 }
 
-h2 {
-    text-align: center;
-    color: #333;
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    color: white;
 }
 
-.form-group {
-    margin-bottom: 15px;
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s;
-}
-
-input:focus,
-textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-textarea {
-    resize: none;
-}
-
-.btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+nav h1.logo {
+    font-size: 24px;
     color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
+    animation: logo-animation 2s ease-in-out;
 }
 
-.btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-@keyframes slideIn {
-    from {
+@keyframes logo-animation {
+    0% {
         transform: translateY(-20px);
         opacity: 0;
     }
-    to {
+    100% {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+header {
+    background-color: #2980b9;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.header-content {
+    animation: fadeIn 3s ease-in-out;
+}
+
+.cta-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #c0392b;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2980b9;
+    position: relative;
+    animation: slide-up 1s ease-in-out;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.skills-grid, .timeline, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.skill-card, .project-card, .timeline-item, .education-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.skill-card:hover, .project-card:hover, .timeline-item:hover, .education-card:hover {
+    transform: translateY(-10px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #1f6396;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
 }
