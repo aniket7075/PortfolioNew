@@ -9,6 +9,7 @@ body {
     background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -21,6 +22,22 @@ nav {
     background-color: #333;
     padding: 10px 0;
     color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 1s ease-out forwards;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 nav .container {
@@ -33,17 +50,6 @@ nav h1.logo {
     font-size: 24px;
     color: #fff;
     animation: logo-animation 2s ease-in-out;
-}
-
-@keyframes logo-animation {
-    0% {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 .nav-links {
@@ -59,35 +65,47 @@ nav h1.logo {
     text-decoration: none;
     color: #fff;
     font-weight: 600;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
 }
 
 .nav-links a:hover {
     color: #f39c12;
+    transform: scale(1.1);
 }
 
 header {
     background-color: #2980b9;
     color: white;
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
-}
-
-.header-content {
     animation: fadeIn 3s ease-in-out;
 }
 
-.cta-button {
-    background-color: #e74c3c;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+.header-content h2 {
+    animation: text-glow 3s infinite alternate;
 }
 
-.cta-button:hover {
-    background-color: #c0392b;
+@keyframes text-glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+}
+
+.header-content .cta-button {
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
 }
 
 .section-title {
@@ -96,10 +114,13 @@ header {
     text-align: center;
     color: #2980b9;
     position: relative;
-    animation: slide-up 1s ease-in-out;
+    animation: slideUp 1s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s;
 }
 
-@keyframes slide-up {
+@keyframes slideUp {
     0% {
         transform: translateY(20px);
         opacity: 0;
@@ -114,6 +135,9 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.5s;
 }
 
 .skill-card, .project-card, .timeline-item, .education-card {
@@ -121,11 +145,44 @@ header {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .skill-card:hover, .project-card:hover, .timeline-item:hover, .education-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skills-grid.in-view, .timeline.in-view, .projects-grid.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.project-card:hover {
+    animation: pulse 0.8s infinite alternate;
+}
+
+.cta-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
 }
 
 .form-group {
@@ -146,11 +203,12 @@ input, textarea {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn:hover {
     background-color: #1f6396;
+    transform: scale(1.05);
 }
 
 footer {
@@ -158,4 +216,47 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@keyframes footer-glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+}
+
+footer p {
+    animation: footer-glow 3s infinite alternate;
+}
+
+/* Scroll-triggered animation */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-in-out;
+}
+
+.scroll-animate.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Section-specific animations on hover */
+.section-title:hover {
+    color: #e74c3c;
+    animation: rotate-title 0.6s ease-in-out forwards;
+}
+
+@keyframes rotate-title {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
