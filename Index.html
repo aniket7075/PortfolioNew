@@ -7,7 +7,6 @@
     <title>Aniket Husukale | Portfolio</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <style>
         body {
@@ -43,7 +42,7 @@
             color: #000;
             border: none;
             border-radius: 5px;
-            transition: transform 0.3s;
+            animation: pulse 1.5s infinite;
         }
         .cta-button:hover {
             transform: translateY(-5px);
@@ -58,22 +57,18 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
-        .skill-card {
+        .skill-card, .project-card {
             background-color: #007bff;
             color: white;
             padding: 15px;
             border-radius: 5px;
             text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .skill-card:hover {
-            transform: scale(1.05);
-        }
-        .project-card {
-            background-color: #e9ecef;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 10px 0;
+        .skill-card:hover, .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         footer {
             text-align: center;
@@ -81,13 +76,43 @@
             background-color: #343a40;
             color: white;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        /* Fade-in animation */
+        section {
+            animation: fadeIn 1s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
         }
-        @keyframes slideDown {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Pulse animation for CTA button */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        /* Timeline styles */
+        .timeline-item {
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #007bff;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease;
+        }
+        /* Form focus effect */
+        form .form-control {
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        form .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         }
     </style>
 </head>
@@ -106,8 +131,6 @@
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                   
-
                 </ul>
             </div>
         </div>
@@ -117,16 +140,16 @@
         <div class="container header-content">
             <h2 class="animate-fade-in">MCA Graduate | Full-Stack Developer</h2>
             <p class="animate-slide-up">Email: <a href="mailto:husukaleaniket@gmail.com" style="color: #ffffff;">husukaleaniket@gmail.com</a> | Phone: +91-7998637575</p>
-            <a href="/Aniket.S.Husukale.pdf" class="cta-button animate-slide-down">Download CV</a>
+            <a href="/Aniket husukale Int.pdf" class="cta-button">Download CV</a>
         </div>
     </header>
 
-    <section id="summary" class="container">
+    <section id="summary" class="container animate-on-scroll">
         <h2 class="section-title">Summary</h2>
         <p>Motivated and detail-oriented MCA graduate with strong programming skills and a passion for software development.</p>
     </section>
 
-    <section id="skills" class="container">
+    <section id="skills" class="container animate-on-scroll">
         <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">Core Java, PHP</div>
@@ -137,7 +160,7 @@
         </div>
     </section>
 
-    <section id="experience" class="container">
+    <section id="experience" class="container animate-on-scroll">
         <h2 class="section-title">Experience</h2>
         <div class="timeline">
             <div class="timeline-item">
@@ -152,7 +175,7 @@
         </div>
     </section>
 
-    <section id="projects" class="container">
+    <section id="projects" class="container animate-on-scroll">
         <h2 class="section-title">Projects</h2>
         <div class="project-card">
             <h3>Agriculture Web Portal</h3>
@@ -164,7 +187,7 @@
         </div>
     </section>
 
-    <section id="education" class="container">
+    <section id="education" class="container animate-on-scroll">
         <h2 class="section-title">Education</h2>
         <div class="education-card">
             <h3>BCA</h3>
@@ -176,9 +199,9 @@
         </div>
     </section>
 
-    <section id="contact" class="container">
+    <section id="contact" class="container animate-on-scroll">
         <h2 class="section-title">Contact</h2>
-        <form id="contact-form"  netlify  onsubmit="sendEmail(event)">
+        <form id="contact-form" onsubmit="sendEmail(event)">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" class="form-control" required>
@@ -196,31 +219,39 @@
     </section>
 
     <footer>
-        <p>© 2024 Aniket Husukale. All rights reserved.</p>
+        <p>&copy; 2024 Aniket Husukale | All rights reserved</p>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            const options = {
+                threshold: 0.1,
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, options);
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
         function sendEmail(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
+            event.preventDefault();
             Email.send({
-                SecureToken: "YOUR_SECURE_TOKEN", // Replace with your secure token
-                To: 'husukaleanike@gmail.com', // Your email address
-                From: email,
-                Subject: `New message from ${name}`,
-                Body: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
-            }).then(
-                response => alert('Message sent successfully!')
-            ).catch(
-                error => alert('Failed to send message. Please try again later.')
-            );
+                SecureToken: "your-secure-token",
+                To: 'your-email@example.com',
+                From: document.getElementById("email").value,
+                Subject: "New Contact Form Inquiry",
+                Body: "Name: " + document.getElementById("name").value +
+                      "<br>Email: " + document.getElementById("email").value +
+                      "<br>Message: " + document.getElementById("message").value
+            }).then(message => alert("Message sent successfully"));
         }
     </script>
 </body>
