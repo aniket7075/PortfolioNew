@@ -9,135 +9,165 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-        }
-        nav {
-            background-color: #343a40;
-            color: white;
-        }
-        .nav-links a {
-            color: white;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #007bff;
-        }
-        header {
-            background: linear-gradient(to right, #007bff, #00d4ff);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .header-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            animation: fadeIn 1s;
-        }
-        .cta-button {
-            padding: 10px 20px;
-            background-color: #ffc107;
-            color: #000;
-            border: none;
-            border-radius: 5px;
-            animation: pulse 1.5s infinite;
-        }
-        .cta-button:hover {
-            transform: translateY(-5px);
-        }
-        .section-title {
-            margin: 30px 0;
-            font-size: 1.8rem;
-            text-align: center;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        .skill-card, .project-card {
-            background-color: #007bff;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .skill-card:hover, .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .education-card {
-            background-color: #162e49a6;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        a {
-            text-align: center;
-            padding: 20px 0;
-         
-            color: white;
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #343a40;
-            color: white;
-        }
-        /* Fade-in animation */
-        section {
-            animation: fadeIn 1s ease-in-out;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        /* Pulse animation for CTA button */
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-        /* Timeline styles */
-        .timeline-item {
-            padding: 15px;
-            margin: 10px 0;
-            border-left: 4px solid #007bff;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 1s ease;
-        }
-        /* Form focus effect */
-        form .form-control {
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-         form .form-control {
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        form .form-control:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
+       body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f172a;
+    color: #f1f5f9;
+    scroll-behavior: smooth;
+}
+.ahref{
+    color:red;
+}
+
+nav {
+    background: #1e293b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links a {
+    color: #e2e8f0;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+header {
+    background: linear-gradient(to right, #0ea5e9, #38bdf8);
+    color: #ffffff;
+    padding: 70px 0;
+    text-align: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header-content h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #facc15, #f97316);
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    animation: pulse 1.5s infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin: 40px 0 30px;
+    font-weight: 600;
+    color: #5daed2;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.skill-card, .project-card, .education-card {
+    background: #464953;
+    color: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover, .project-card:hover, .education-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+a {
+    color: #fdfeff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #3b82f6;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e293b;
+    color: #94a3b8;
+}
+
+.timeline-item {
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 4px solid #38bdf8;
+    background-color: #1e293b;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 1s ease;
+}
+
+form .form-control {
+    background-color: #0f172a;
+    color: #f8fafc;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form .form-control:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+}
+
+/* Animations */
+section {
+    animation: fadeIn 1s ease-in-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.07);
+    }
+}
+
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <h1 class="navbar-brand">Aniket Husukale</h1>
+            <h1 class="navbar-brand">Aniket Shantinath Husukale</h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -148,7 +178,7 @@
                     <!-- <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -164,10 +194,12 @@
             <div class="container header-content">
                 <div class="d-flex align-items-center justify-content-center">
                     <!-- Profile Image -->
-                    <img src="aaa.jpg" alt="Aniket Husukale" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; margin-right: 20px;">
+                    <img src="aaa.jpg" alt="Aniket Shantinath Husukale" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; margin-right: 20px;">
                     <div>
-                        <h2 class="animate-fade-in">MCA Graduate | Full-Stack Developer</h2>
-                        <p class="animate-slide-up">Email: <a href="mailto:husukaleaniket@gmail.com" style="color: #ffffff;">husukaleaniket@gmail.com</a> | Phone: +91-7998637575</p>
+                        <h2 class="animate-fade-in">Aniket Shantinath Husukale</h2>
+                        <h3 class="animate-fade-in">MCA Graduate | Full-Stack Developer</h3>
+                        <p class="animate-slide-up">🌍 Location: Pune, Maharashtra, India</p>
+                        <p class="animate-slide-up">✉️ Email: <a href="mailto:husukaleaniket@gmail.com" style="color: #ffffff;">husukaleaniket@gmail.com | </a> 📱 Phone: +91-7998637575 | 🐙<a href=" https://github.com/aniket7075" style="color: #ffffff;">Github</a></p>
                         <a href="/Aniket Husukale.pdf" class="cta-button">Download CV</a>
                     </div>
                 </div>
@@ -177,7 +209,7 @@
     </header>
 
     <section id="summary" class="container animate-on-scroll">
-        <h2 class="section-title">Summary</h2>
+        <h2 class="section-title">👤 Summary</h2>
         <p>Motivated and detail-oriented MCA graduate with strong programming skills and a
             passion for software development. With hands-on experience in Core Java, web development,
             and database management, I aim to contribute to innovative software solutions in a dynamic
@@ -186,14 +218,13 @@
     </section>
 
     <section id="skills" class="container animate-on-scroll">
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title">💻 Skills</h2>
         <div class="skills-grid">
-            <div class="skill-card">Core Java, PHP</div>
+            <div class="skill-card">Core Java, Spring , Spring Boot , Hibernate</div>
             <div class="skill-card">HTML, CSS, JavaScript, React</div>
-            <div class="skill-card">MySQL, JDBC</div>
             <div class="skill-card">Eclipse, Visual Studio, NetBeans , STS (Spring Tool Suite )</div>
-            <div class="skill-card">Spring , Spring Boot , Hibernate</div>
-            <div class="skill-card">Windows, Linux</div>
+
+            <div class="skill-card">MySQL, JDBC, Windows, Linux</div>
         </div>
     </section>
 
@@ -213,7 +244,7 @@
     </section> -->
 
     <section id="projects" class="container animate-on-scroll">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title">📂 Projects</h2>
         <div class="project-card">
             <h3><a href="https://github.com/aniket7075/Cake_Shop.git" >Cake Shop Manegment System</a></h3>
             <p>A full-stack web application designed to simplify the management and operation of a cake shop. 
@@ -244,18 +275,23 @@
         </div>
     </section>
 
-    <section id="education" class="container animate-on-scroll">
-        <h2 class="section-title">Education</h2>
-        <div class="education-card">
-            <h3>BCA</h3>
-            <p>Shivaji University, Kolhapur (2022)</p>
-        </div>
-        <br>
-        <div class="education-card">
-            <h3>MCA</h3>
-            <p>Savitribai Phule Pune University (2024)</p>
-        </div>
-    </section>
+    <section id="education" class="container animate-on-scroll"> 
+    <h2 class="section-title">🎓 Education</h2>
+    
+    <div class="education-card">
+        <h3>BCA</h3>
+        <p>Chhatrapati Shivaji Maharaj University, Kolhapur (2022)</p>
+        <p><strong>Percentage:</strong> 78%</p>
+    </div>
+    <br>
+    
+    <div class="education-card">
+        <h3>MCA</h3>
+        <p>Savitribai Phule Pune University (2024)</p>
+        <p><strong>Percentage:</strong> 77%</p>
+    </div>
+</section>
+
 
     <!-- <section id="contact" class="container animate-on-scroll">
         <h2 class="section-title">Contact</h2>
