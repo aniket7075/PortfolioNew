@@ -49,7 +49,7 @@ a:hover{color:var(--purple);}
   align-items:center;
   text-align:center;
   overflow:hidden;
-  background-image: url("assets/images/profile.png");
+  background-image: url("assets/images/profile 3.png");
   background-size: contain;
   background-position: center;
    background-image:transparent; 
@@ -194,6 +194,84 @@ footer{
   color:#94a3b8;
 }
 footer a{margin:0 10px;font-size:22px;}
+/* ================= CERTIFICATIONS ================= */
+.cert-card{
+  text-align:center;
+}
+
+.cert-icon{
+  font-size:46px;
+  color:var(--cyan);
+  margin-bottom:12px;
+  animation:certPop 0.8s ease;
+}
+
+@keyframes certPop{
+  from{transform:scale(0);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+/* Celebration confetti */
+.confetti{
+  position:fixed;
+  top:-10px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  animation:confettiFall 10s linear forwards;
+  z-index:9999;
+}
+/* ================= CERTIFICATION SLIDER ================= */
+/* ================= CERTIFICATE IMAGE SLIDER ================= */
+.cert-slider{
+  margin-top:50px;
+  overflow:hidden;
+}
+
+.cert-track{
+  display:flex;
+  gap:30px;
+  width:max-content;
+  animation:certSlide 25s linear infinite;
+}
+
+.cert-track img{
+  width:220px;
+  height:140px;
+  object-fit:contain;
+  padding:12px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.08);
+  box-shadow:0 0 20px rgba(56,189,248,0.4);
+}
+
+@keyframes certSlide{
+  from{ transform:translateX(-50%); }
+  to{ transform:translateX(0); }
+}
+
+.cert-slider:hover .cert-track{
+  animation-play-state:paused;
+}
+
+
+/* Left → Right movement */
+@keyframes certSlide{
+  from{
+    transform:translateX(-50%);
+  }
+  to{
+    transform:translateX(0);
+  }
+}
+
+@keyframes confettiFall{
+  to{
+    transform:translateY(100vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
 </style>
 </head>
 
@@ -258,6 +336,44 @@ performance optimization, and modern UI.
 
 </div>
 </div>
+</section>
+<!-- EDUCATION -->
+<section class="fade-section" id="education">
+  <div class="container">
+    <h2 class="section-title">Education</h2>
+
+    <div class="row g-4">
+
+      <!-- MCA -->
+      <div class="col-md-6">
+        <div class="card-glass">
+          <h5 style="color:var(--cyan)">
+            <i class="fa-solid fa-graduation-cap"></i>
+            Master of Computer Applications (MCA)
+          </h5>
+          <p>
+            <strong>University:</strong> Savitribai Phule Pune University<br>
+            <strong>Year:</strong> 2024
+          </p>
+        </div>
+      </div>
+
+      <!-- BCA -->
+      <div class="col-md-6">
+        <div class="card-glass">
+          <h5 style="color:var(--cyan)">
+            <i class="fa-solid fa-graduation-cap"></i>
+            Bachelor of Computer Applications (BCA)
+          </h5>
+          <p>
+            <strong>University:</strong> Chhatrapati Shivaji Maharaj University, Kolhapur<br>
+            <strong>Year:</strong> 2022
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- PROJECTS -->
@@ -361,6 +477,152 @@ with a responsive JSP-based UI and Spring Boot backend.
 </div>
 </section>
 </br>
+<!-- CERTIFICATIONS -->
+<section class="fade-section" id="certifications">
+  <div class="container">
+    <h2 class="section-title">Certifications & Achievements</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card-glass cert-card">
+          <i class="fa-solid fa-award cert-icon"></i>
+          <h5>Java Full Stack Development</h5>
+          <p>
+            Certification covering Core Java, Spring Boot, Hibernate,
+            MySQL, HTML, CSS, and JavaScript.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card-glass cert-card">
+          <i class="fa-solid fa-certificate cert-icon"></i>
+          <h5>Python Programming</h5>
+          <p>
+            Certified in Python Programming with focus on logic building,
+            problem solving, and scripting.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card-glass cert-card">
+          <i class="fa-solid fa-medal cert-icon"></i>
+          <h5>Software Development Internship</h5>
+          <p>
+            Successfully completed a 6-month Software Development Internship
+            at Codenera Pvt. Ltd., Pune.
+          </p>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card-glass cert-card">
+          <i class="fa-solid fa-medal cert-icon"></i>
+          <h5>Java Script </h5>
+          <p>
+            Successfully completed a certification in Java Script from Hackerrank.
+          </p>
+        </div>
+      </div>
+<!-- Deloitte -->
+<div class="col-md-4">
+  <div class="card-glass cert-card">
+    <i class="fa-solid fa-award cert-icon"></i>
+    <h5>Deloitte Australia – Technology Job Simulation</h5>
+    <p>
+      Successfully completed the Technology Job Simulation program
+      offered by Deloitte Australia through Forage.
+    </p>
+  </div>
+</div>
+
+<!-- English Communication -->
+<div class="col-md-4">
+  <div class="card-glass cert-card">
+    <i class="fa-solid fa-comments cert-icon"></i>
+    <h5>English Communication & Public Speaking</h5>
+    <p>
+      Successfully completed English Communication and Public Speaking
+      certification from Nobel Communication.
+    </p>
+  </div>
+</div>
+
+<!-- LinkedIn Marketing -->
+<div class="col-md-4">
+  <div class="card-glass cert-card">
+    <i class="fa-brands fa-linkedin cert-icon"></i>
+    <h5>LinkedIn Marketing Solutions Fundamentals</h5>
+    <p>
+      Successfully completed LinkedIn Marketing Solutions Fundamentals
+      certification issued by LinkedIn.
+    </p>
+  </div>
+</div>
+
+<!-- CSS -->
+<div class="col-md-4">
+  <div class="card-glass cert-card">
+    <i class="fa-brands fa-hackerrank cert-icon"></i>
+    <h5>CSS (Basic)</h5>
+    <p>
+      Successfully completed the CSS (Basic) certification from HackerRank,
+      gaining strong fundamentals in styling and layouts.
+    </p>
+  </div>
+</div>
+
+
+<!-- SQL -->
+<div class="col-md-4">
+  <div class="card-glass cert-card">
+    <i class="fa-brands fa-hackerrank cert-icon"></i>
+    <h5>SQL (Basic & Advanced)</h5>
+    <p>
+      Successfully completed SQL Basic and Advanced certifications from
+      HackerRank, focusing on queries and database concepts.
+    </p>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+<!-- CERTIFICATION IMAGE SLIDER -->
+<section
+
+<div class="cert-slider">
+  <div class="cert-track">
+
+   <img src="assets/certificates/Java.jpeg"  onclick="openCert(this.src)" alt="Java Certificate">
+<img src="assets/certificates/css.png" alt="CSS Certificate" onclick="openCert(this.src)">
+<img src="assets/certificates/deloit.png" alt="Deloitte Australia – Technology Job Simulation"onclick="openCert(this.src)">
+<img src="assets/certificates/Nobel.jpeg" alt="English Communication & Public Speaking " onclick="openCert(this.src)">
+<img src="assets/certificates/sql.png" alt="SQL Certificate" onclick="openCert(this.src)">
+<img src="assets/certificates/linkd.png" alt="Linkdin Marketing Labs " onclick="openCert(this.src)">
+    <!-- duplicate for smooth infinite scroll -->
+   <img src="assets/certificates/Java.jpeg"  onclick="openCert(this.src)" alt="Java Certificate">
+<img src="assets/certificates/css.png" alt="CSS Certificate" onclick="openCert(this.src)">
+<img src="assets/certificates/deloit.png" alt="Deloitte Australia – Technology Job Simulation"onclick="openCert(this.src)">
+<img src="assets/certificates/web.png" alt="Web Development Certificate" onclick="openCert(this.src)">
+<img src="assets/certificates/sql.png" alt="SQL Certificate" onclick="openCert(this.src)">
+</div>
+
+  </div>
+</div>
+<div class="video-modal" id="certModal">
+  <div class="video-box text-center">
+    <img id="certImg"
+         src=""
+         style="max-width:100%; max-height:80vh; border-radius:16px;"
+         alt="Certificate">
+    <br>
+    <button class="btn-neo mt-3" onclick="closeCert()">Close</button>
+  </div>
+</div>
+</section>
 <center>
 <div><a href="/assets/Resume/AniketHusukale.pdf" class="btn-neo mt-3">Download CV</a></div>
 </center>
@@ -404,6 +666,20 @@ const observer=new IntersectionObserver(entries=>{
  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show");});
 },{threshold:0.15});
 document.querySelectorAll(".fade-section").forEach(s=>observer.observe(s));
+/* Certificate image modal */
+function openCert(img){
+  const modal=document.getElementById("certModal");
+  const image=document.getElementById("certImg");
+  image.src=img;
+  modal.style.display="flex";
+}
+
+function closeCert(){
+  const modal=document.getElementById("certModal");
+  const image=document.getElementById("certImg");
+  image.src="";
+  modal.style.display="none";
+}
 
 /* Video modal */
 function openVideo(src){
@@ -418,6 +694,27 @@ function closeVideo(){
  v.src="";
  document.getElementById("videoModal").style.display="none";
 }
+/* Certification celebration animation */
+let certTriggered = false;
+const certSection = document.getElementById("certifications");
+
+new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !certTriggered) {
+    certTriggered = true;
+
+    for (let i = 0; i < 30; i++) {
+      const confetti = document.createElement("span");
+      confetti.className = "confetti";
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.background =
+        i % 2 === 0 ? "#38bdf8" : "#a855f7";
+
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 2000);
+    }
+  }
+},{ threshold: 0.3 }).observe(certSection);
+
 </script>
 
 </body>
